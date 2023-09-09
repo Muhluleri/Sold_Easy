@@ -5,12 +5,14 @@ public class Details
 	private String make;
 	private Integer year;
 	private String model;
+	private String chasisNumber;
 	
-	public Details(String make, Integer year, String model) 
+	public Details(String make, Integer year, String model, String chasisNumber) 
 	{
 		this.make = make;
 		this.year = year;
 		this.model = model;
+		this.chasisNumber = chasisNumber;
 	}
 
 	public String getMake() 
@@ -41,5 +43,16 @@ public class Details
 	{
 		this.model = model;
 	}
+
+	public String getChasisNumber() 
+	{
+		return chasisNumber;
+	}
+
+	public void setChasisNumber(String chasisNumber) 
+	{
+		this.chasisNumber = chasisNumber;
+	}
+	
 	
 }

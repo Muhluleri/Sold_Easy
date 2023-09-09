@@ -2,15 +2,27 @@ package com.sold_easy.car.make.engine;
 
 public class Engine 
 {
+	private String engineNumber;
 	private Integer noOfCylinders;
 	private Integer torque;
 	private Integer power;
 	
-	public Engine(Integer noOfCylinders, Integer torque, Integer power) 
+	public Engine(String engineNumber,Integer noOfCylinders, Integer torque, Integer power) 
 	{
+		this.engineNumber = engineNumber;
 		this.noOfCylinders = noOfCylinders;
 		this.torque = torque;
 		this.power = power;
+	}
+
+	public String getEngineNumber() 
+	{
+		return engineNumber;
+	}
+
+	public void setEngineNumber(String engineNumber) 
+	{
+		this.engineNumber = engineNumber;
 	}
 
 	public Integer getNoOfCylinders() 

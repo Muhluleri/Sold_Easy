@@ -1,99 +1,77 @@
 package com.sold_easy.car.history;
 
+import com.sold_easy.car.history.conditionhistory.ConditionHistory;
+import com.sold_easy.car.history.financehistory.FinanceHistory;
+import com.sold_easy.car.history.licensehistory.LicenseHistory;
+import com.sold_easy.car.history.ownershiphistory.OwnershipHistory;
+import com.sold_easy.car.history.servicehistory.ServiceHistory;
+
 public class History 
 {
-	private Integer mileage;
-	private Integer initialPrice;
-	private String puchaseLocation;
-	private String servicePlan;
-	private String serviceHistory;
-	private boolean warranty;
-	private Integer ownershipDuration;
+	private OwnershipHistory ownershipHistory;
+	private ConditionHistory conditionHistory;
+	private FinanceHistory financeHistory;
+	private ServiceHistory serviceHistory;
+	private LicenseHistory licenseHistory;
 	
-	public History(Integer mileage, Integer initialPrice, String puchaseLocation, String servicePlan,
-			       String serviceHistory, boolean warranty, 
-			       Integer ownershipDuration) 
+	public History(OwnershipHistory ownershipHistory, ConditionHistory conditionHistory, 
+			       FinanceHistory financeHistory,ServiceHistory serviceHistory, 
+			       LicenseHistory licenseHistory) 
 	{
-		
-		this.mileage = mileage;
-		this.initialPrice = initialPrice;
-		this.puchaseLocation = puchaseLocation;
-		this.servicePlan = servicePlan;
+		this.ownershipHistory = ownershipHistory;
+		this.conditionHistory = conditionHistory;
+		this.financeHistory = financeHistory;
 		this.serviceHistory = serviceHistory;
-		this.warranty = warranty;
-		this.ownershipDuration = ownershipDuration;
+		this.licenseHistory = licenseHistory;
 	}
 
-	public Integer getMileage() 
+	public OwnershipHistory getOwnershipHistory() 
 	{
-		return mileage;
+		return ownershipHistory;
 	}
 
-	public void setMileage(Integer mileage) 
+	public void setOwnershipHistory(OwnershipHistory ownershipHistory) 
 	{
-		this.mileage = mileage;
+		this.ownershipHistory = ownershipHistory;
 	}
 
-	public Integer getInitialPrice() 
+	public ConditionHistory getConditionHistory() 
 	{
-		return initialPrice;
+		return conditionHistory;
 	}
 
-	public void setInitialPrice(Integer initialPrice) 
+	public void setConditionHistory(ConditionHistory conditionHistory) 
 	{
-		this.initialPrice = initialPrice;
+		this.conditionHistory = conditionHistory;
 	}
 
-	public String getPuchaseLocation() 
+	public FinanceHistory getFinanceHistory() 
 	{
-		return puchaseLocation;
+		return financeHistory;
 	}
 
-	public void setPuchaseLocation(String puchaseLocation) 
+	public void setFinanceHistory(FinanceHistory financeHistory) 
 	{
-		this.puchaseLocation = puchaseLocation;
+		this.financeHistory = financeHistory;
 	}
 
-	public String getServicePlan() 
-	{
-		return servicePlan;
-	}
-
-	public void setServicePlan(String servicePlan) 
-	{
-		this.servicePlan = servicePlan;
-	}
-
-	public String getServiceHistory() 
+	public ServiceHistory getServiceHistory() 
 	{
 		return serviceHistory;
 	}
 
-	public void setServiceHistory(String serviceHistory) 
+	public void setServiceHistory(ServiceHistory serviceHistory) 
 	{
 		this.serviceHistory = serviceHistory;
 	}
 
-	public boolean isWarranty()
+	public LicenseHistory getLicenseHistory() 
 	{
-		return warranty;
+		return licenseHistory;
 	}
 
-	public void setWarranty(boolean warranty)
+	public void setLicenseHistory(LicenseHistory licenseHistory) 
 	{
-		this.warranty = warranty;
-	}
-
-	public Integer getOwnershipDuration() 
-	{
-		return ownershipDuration;
-	}
-
-	public void setOwnershipDuration(Integer ownershipDuration) 
-	{
-		this.ownershipDuration = ownershipDuration;
-	}
-	
-		
-	
+		this.licenseHistory = licenseHistory;
+	}	
 }
