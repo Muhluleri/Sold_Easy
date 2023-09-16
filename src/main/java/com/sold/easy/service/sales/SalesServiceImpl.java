@@ -24,10 +24,9 @@ public class SalesServiceImpl implements SalesService {
     public ClientSaleResponse postCarSale(ClientSaleRequest clientSaleRequest){
         Optional<Client> client = clientRepository.findById(clientSaleRequest.getClientId());
         Optional<Profile> profile = profileRepository.findById(clientSaleRequest.getProfileId());
-        if(!client.isPresent()|| !profile.isPresent()){
+        if(!client.isPresent()&& !profile.isPresent()){
             throw new ValidationException();
         }
-
 
         Car car = null; //lientSaleRequest.getCar();
 
