@@ -1,4 +1,4 @@
-package com.sold.easy.dto.client;
+package com.sold.easy.dto.profile;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,7 +9,25 @@ public class ProfileRegisterResponse
 {
 	private String referenceId;
 	private String message;
+	private long clientId;
+	private long profileId;
 	
+	public long getClientId() {
+		return clientId;
+	}
+
+	public void setClientId(long clientId) {
+		this.clientId = clientId;
+	}
+
+	public long getProfileId() {
+		return profileId;
+	}
+
+	public void setProfileId(long profileId) {
+		this.profileId = profileId;
+	}
+
 	public String getReferenceId() 
 	{
 		return referenceId;

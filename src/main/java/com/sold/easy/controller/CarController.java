@@ -2,9 +2,8 @@ package com.sold.easy.controller;
 
 import com.sold.easy.dto.client.ClientSaleRequest;
 import com.sold.easy.dto.client.ClientSaleResponse;
-import com.sold.easy.dto.client.ProfileRegisterRequest;
-import com.sold.easy.dto.client.ProfileRegisterResponse;
-import com.sold.easy.model.car.Profile;
+import com.sold.easy.dto.profile.ProfileRegisterRequest;
+import com.sold.easy.dto.profile.ProfileRegisterResponse;
 import com.sold.easy.service.register.ProfileRegister;
 import com.sold.easy.service.sales.SalesService;
 import lombok.RequiredArgsConstructor;
