@@ -1,5 +1,7 @@
 package com.sold.easy.model.car.history;
 
+import java.util.List;
+
 import com.sold.easy.model.car.history.conditionhistory.ConditionHistory;
 import com.sold.easy.model.car.history.financehistory.FinanceHistory;
 import com.sold.easy.model.car.history.licensehistory.LicenseHistory;
@@ -8,29 +10,24 @@ import com.sold.easy.model.car.history.servicehistory.ServiceHistory;
 
 public class History 
 {
-	private OwnershipHistory ownershipHistory;
+	//Checked
+	private List<OwnershipHistory> ownershipHistory;
+	//Checked
 	private ConditionHistory conditionHistory;
+	//Checked
 	private FinanceHistory financeHistory;
+	//Checked
 	private ServiceHistory serviceHistory;
+	//Checked
 	private LicenseHistory licenseHistory;
 	
-	public History(OwnershipHistory ownershipHistory, ConditionHistory conditionHistory, 
-			       FinanceHistory financeHistory,ServiceHistory serviceHistory, 
-			       LicenseHistory licenseHistory) 
-	{
-		this.ownershipHistory = ownershipHistory;
-		this.conditionHistory = conditionHistory;
-		this.financeHistory = financeHistory;
-		this.serviceHistory = serviceHistory;
-		this.licenseHistory = licenseHistory;
-	}
 
-	public OwnershipHistory getOwnershipHistory() 
+	public List<OwnershipHistory> getOwnershipHistory() 
 	{
 		return ownershipHistory;
 	}
 
-	public void setOwnershipHistory(OwnershipHistory ownershipHistory) 
+	public void setOwnershipHistory(List<OwnershipHistory> ownershipHistory) 
 	{
 		this.ownershipHistory = ownershipHistory;
 	}

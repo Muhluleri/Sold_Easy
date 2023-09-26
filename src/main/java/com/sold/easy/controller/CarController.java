@@ -4,10 +4,12 @@ import com.sold.easy.dto.client.ClientSaleRequest;
 import com.sold.easy.dto.client.ClientSaleResponse;
 import com.sold.easy.dto.profile.ProfileRegisterRequest;
 import com.sold.easy.dto.profile.ProfileRegisterResponse;
+import com.sold.easy.model.car.Sale;
 import com.sold.easy.service.register.ProfileRegister;
 import com.sold.easy.service.sales.SalesService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
+import java.util.List;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,8 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class CarController {
 
-    private final SalesService salesService;
-    private final ProfileRegister profileRegister;
+    private SalesService salesService;
+    private ProfileRegister profileRegister;
 
     //Register profile 
     
@@ -32,5 +34,21 @@ public class CarController {
     {
         return salesService.postCarSale(clientSaleRequest);
     }
+    
+    //Administrator receives a list of all new sale requests before they are advertised
+    @GetMapping("/sales/list/nonRegistered")
+    public List<Sale> nonRegisteredSaleRequestList()
+    {
+    	return salesService.viewNotRegisteredSales();
+    }
+    
+    @GetMapping("/sales/list")
+    public List<Sale> SaleRequestList()
+    {
+		return salesService.viewRegisteredSales();
+    	
+    }
+    
+    
 
 }

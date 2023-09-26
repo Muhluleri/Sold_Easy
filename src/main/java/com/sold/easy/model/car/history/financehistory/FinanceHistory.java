@@ -1,10 +1,37 @@
 package com.sold.easy.model.car.history.financehistory;
 
+import jakarta.persistence.*;
+
 public class FinanceHistory 
 {
+	@Id
+	@SequenceGenerator( name = "financeHistory_id" , sequenceName = "financeHistory_id_gen")
+	@GeneratedValue( generator = "financeHistory_id_gen")
+	private long id;
 	private boolean financed;
-	private Integer outstandingAmount;
+	private double outstandingAmount;
+	private double financedAmount;
 	
+	public long getId() 
+	{
+		return id;
+	}
+
+	public void setId(long id) 
+	{
+		this.id = id;
+	}
+	
+	public double getFinancedAmount() 
+	{
+		return financedAmount;
+	}
+
+	public void setFinancedAmount(double financedAmount) 
+	{
+		this.financedAmount = financedAmount;
+	}
+
 	public FinanceHistory(boolean financed)
 	{
 		this.financed = financed;
@@ -14,12 +41,6 @@ public class FinanceHistory
 		}
 	}
 	
-	public FinanceHistory(boolean financed, Integer outstandingAmount) 
-	{
-		this.financed = financed;
-		this.outstandingAmount = outstandingAmount;
-	}
-
 	public boolean isFinanced() 
 	{
 		return financed;
@@ -30,12 +51,12 @@ public class FinanceHistory
 		this.financed = financed;
 	}
 
-	public Integer getOutstandingAmount() 
+	public double getOutstandingAmount() 
 	{
 		return outstandingAmount;
 	}
 
-	public void setOutstandingAmount(Integer outstandingAmount)
+	public void setOutstandingAmount(double outstandingAmount)
 	{
 		this.outstandingAmount = outstandingAmount;
 	}

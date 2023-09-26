@@ -1,23 +1,28 @@
 package com.sold.easy.model.car.make.fuel;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Fuel 
 {
+	@Id
+	@SequenceGenerator( name = "fuel_id" , sequenceName = "fuel_id_gen")
+	@GeneratedValue( generator = "fuel_id_gen")
+	private long id;
 	private String type;
-	private Integer consumption;
-	private String driveWheels;
+	private Consumption consumption;
 	private String system;
 	private Integer capacity;
 	private Integer range;
 	
-	public Fuel(String type, Integer consumption, String driveWheels, 
-			    String system, Integer capacity, Integer range) 
+	public long getId() 
 	{
-		this.type = type;
-		this.consumption = consumption;
-		this.driveWheels = driveWheels;
-		this.system = system;
-		this.capacity = capacity;
-		this.range = range;
+		return id;
+	}
+
+	public void setId(long id) 
+	{
+		this.id = id;
 	}
 
 	public String getType() 
@@ -30,24 +35,14 @@ public class Fuel
 		this.type = type;
 	}
 
-	public Integer getConsumption() 
+	public Consumption getConsumption() 
 	{
 		return consumption;
 	}
 
-	public void setConsumption(Integer consumption) 
+	public void setConsumption(Consumption consumption) 
 	{
 		this.consumption = consumption;
-	}
-
-	public String getDriveWheels() 
-	{
-		return driveWheels;
-	}
-
-	public void setDriveWheels(String driveWheels) 
-	{
-		this.driveWheels = driveWheels;
 	}
 
 	public String getSystem() 

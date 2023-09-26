@@ -7,15 +7,16 @@ public class Owner
 	private String email;
 	private String cellNo;
 	private String altNo;
-	
-	public Owner(String name, String surname, String email, 
-				   String cellNo, String altNo) 
+	private String idNumber;
+
+	public String getIdNumber() 
 	{
-		this.name = name;
-		this.surname = surname;
-		this.email = email;
-		this.cellNo = cellNo;
-		this.altNo = altNo;
+		return idNumber;
+	}
+
+	public void setIdNumber(String idNumber) 
+	{
+		this.idNumber = idNumber;
 	}
 
 	public String getName() 

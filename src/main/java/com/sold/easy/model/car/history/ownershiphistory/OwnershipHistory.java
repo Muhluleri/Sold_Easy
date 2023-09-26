@@ -1,35 +1,56 @@
 package com.sold.easy.model.car.history.ownershiphistory;
 
+import java.util.Date;
+import java.util.List;
+import jakarta.persistence.*;
+
+@Entity
 public class OwnershipHistory 
 {
-	private Integer initialPrice;
+	@Id
+	@SequenceGenerator( name = "ownershiphistory_id", sequenceName = "ownershiphistory_id_gen")
+	@GeneratedValue( generator = "ownershiphistory_id_gen")
+	private long id;
+	private double purchasePrice;
+	private double tradeInValue;
 	private String puchaseLocation;
 	private Integer ownershipDuration;
 	private boolean warranty;
-	private boolean documentation;
+	private List<Documentation> documentations;
 	private Integer mileage;
+	private Date buyDate;
+	private Date sellDate;
 	
-	public OwnershipHistory(Integer initialPrice, String puchaseLocation, 
-			                Integer ownershipDuration, boolean warranty,
-			                boolean documentation, Integer mileage) 
+	public long getId() 
 	{
-		this.initialPrice = initialPrice;
-		this.puchaseLocation = puchaseLocation;
-		this.ownershipDuration = ownershipDuration;
-		this.warranty = warranty;
-		this.documentation = documentation;
-		this.mileage = mileage;
+		return id;
+	}
+
+	public void setId(long id) 
+	{
+		this.id = id;
 	}
 	
-	public Integer getInitialPrice() 
+	public Date getBuyDate() 
 	{
-		return initialPrice;
+		return buyDate;
 	}
-	
-	public void setInitialPrice(Integer initialPrice)
+
+	public void setBuyDate(Date buyDate) 
 	{
-		this.initialPrice = initialPrice;
+		this.buyDate = buyDate;
 	}
+
+	public Date getSellDate() 
+	{
+		return sellDate;
+	}
+
+	public void setSellDate(Date sellDate)
+	{
+		this.sellDate = sellDate;
+	}
+
 	public String getPuchaseLocation() {
 		return puchaseLocation;
 	}
@@ -59,16 +80,6 @@ public class OwnershipHistory
 		this.warranty = warranty;
 	}
 	
-	public boolean isDocumentation() 
-	{
-		return documentation;
-	}
-	
-	public void setDocumentation(boolean documentation) 
-	{
-		this.documentation = documentation;
-	}
-	
 	public Integer getMileage() 
 	{
 		return mileage;
@@ -78,9 +89,35 @@ public class OwnershipHistory
 	{
 		this.mileage = mileage;
 	}
-	
-	
 
+	public double getPurchasePrice() 
+	{
+		return purchasePrice;
+	}
+
+	public void setPurchasePrice(double purchasePrice) 
+	{
+		this.purchasePrice = purchasePrice;
+	}
 	
+	public double getTradeInValue() 
+	{
+		return tradeInValue;
+	}
+
+	public void setTradeInValue(double tradeInValue) 
+	{
+		this.tradeInValue = tradeInValue;
+	}
+
+	public List<Documentation> getDocumentations() 
+	{
+		return documentations;
+	}
+
+	public void setDocumentations(List<Documentation> documentations)
+	{
+		this.documentations = documentations;
+	}
 	
 }

@@ -18,30 +18,56 @@ public class Sale {
     private Client client;
     private Profile profile;
     private Car car;
+    private Boolean registered;
     
-	public Long getId() {
+	public Long getId() 
+	{
 		return id;
-	}
-	public void setId(Long id) {
+	} 
+	
+	public void setId(Long id) 
+	{
 		this.id = id;
 	}
-	public Client getClient() {
+	
+	public Client getClient() 
+	{
 		return client;
 	}
-	public void setClient(Client client) {
+	
+	public void setClient(Client client) 
+	{
 		this.client = client;
 	}
-	public Profile getProfile() {
+	
+	public Profile getProfile()
+	{
 		return profile;
 	}
-	public void setProfile(Profile profile) {
+	
+	public void setProfile(Profile profile)
+	{
 		this.profile = profile;
 	}
-	public Car getCar() {
+	
+	public Car getCar() 
+	{
 		return car;
 	}
-	public void setCar(Car car) {
+	
+	public void setCar(Car car) 
+	{
 		this.car = car;
+	}
+	
+	public Boolean getRegistered() 
+	{
+		return registered;
+	}
+	
+	public void setRegistered(Boolean registered) 
+	{
+		this.registered = registered;
 	}
     
     

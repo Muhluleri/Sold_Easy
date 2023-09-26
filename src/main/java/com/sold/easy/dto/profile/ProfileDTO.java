@@ -6,11 +6,13 @@ public class ProfileDTO
 {
 	private ClientDTO client;
 
-	public ClientDTO getClient() {
+	public ClientDTO getClient() 
+	{
 		return client;
 	}
 
-	public void setClient(ClientDTO client) {
+	public void setClient(ClientDTO client) 
+	{
 		this.client = client;
 	}
 	

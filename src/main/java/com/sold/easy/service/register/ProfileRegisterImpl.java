@@ -25,14 +25,11 @@ public class ProfileRegisterImpl implements ProfileRegister
 		{
 			throw new UserExistsException("User already exits");
 		}
-				
-		//Validate the data being inputed 
-		
-		//Validation processes
-		
+						
 		//Add profile to the database
 		Profile profile = profileMapper.mapProfileToDomain(profileRegisterRequest.getProfile());
 		profile = profileRepository.save(profile);
+		
 		//Return message for successful update
 		ProfileRegisterResponse profileRegisterResponse = new ProfileRegisterResponse();
 		profileRegisterResponse.setProfileId(profile.getId());

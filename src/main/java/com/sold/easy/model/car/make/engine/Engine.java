@@ -1,19 +1,21 @@
 package com.sold.easy.model.car.make.engine;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
+
+@Entity
 public class Engine 
 {
+	@Id
+	@SequenceGenerator( name = "engine_id" , sequenceName = "engine_id_gen")
+	@GeneratedValue( generator = "engine_id_gen")
+	private long id;
 	private String engineNumber;
 	private Integer noOfCylinders;
 	private Integer torque;
 	private Integer power;
-	
-	public Engine(String engineNumber,Integer noOfCylinders, Integer torque, Integer power) 
-	{
-		this.engineNumber = engineNumber;
-		this.noOfCylinders = noOfCylinders;
-		this.torque = torque;
-		this.power = power;
-	}
 
 	public String getEngineNumber() 
 	{

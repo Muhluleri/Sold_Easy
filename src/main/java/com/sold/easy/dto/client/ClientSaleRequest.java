@@ -1,5 +1,7 @@
 package com.sold.easy.dto.client;
 
+import com.sold.easy.dto.sale.SaleDTO;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,24 +12,46 @@ public class ClientSaleRequest {
     private long clientId;
     private long profileId;
     private Car car;
+    private SaleDTO sale;
     
-	public long getClientId() {
+	public long getClientId() 
+	{
 		return clientId;
 	}
-	public void setClientId(long clientId) {
+	
+	public void setClientId(long clientId) 
+	{
 		this.clientId = clientId;
 	}
-	public long getProfileId() {
+	
+	public long getProfileId() 
+	{
 		return profileId;
 	}
-	public void setProfileId(long profileId) {
+	
+	public void setProfileId(long profileId) 
+	{
 		this.profileId = profileId;
 	}
-	public Car getCar() {
+	
+	public Car getCar() 
+	{
 		return car;
 	}
-	public void setCar(Car car) {
+	
+	public void setCar(Car car) 
+	{
 		this.car = car;
+	}
+	
+	public SaleDTO getSale() 
+	{
+		return sale;
+	}
+	
+	public void setSale(SaleDTO sale) 
+	{
+		this.sale = sale;
 	}
 
 }

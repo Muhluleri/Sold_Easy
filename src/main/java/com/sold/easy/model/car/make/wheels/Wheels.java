@@ -1,16 +1,26 @@
 package com.sold.easy.model.car.make.wheels;
 
-public class Wheels 
+import jakarta.persistence.*;
+
+@Entity
+public class Wheels
 {
+	@Id
+	@SequenceGenerator( name = "wheels_id" , sequenceName = "wheels_id_gen")
+	@GeneratedValue( generator = "wheels_id_gen")
+	private long id;
 	private String description; 
-	private String size;
-	private Integer pressure;
+	private String tyresize;
+	private Integer rimSize;
 	
-	public Wheels(String description, String size, Integer pressure) 
+	public long getId() 
 	{
-		this.description = description;
-		this.size = size;
-		this.pressure = pressure;
+		return id;
+	}
+
+	public void setId(long id) 
+	{
+		this.id = id;
 	}
 
 	public String getDescription() 
@@ -23,26 +33,25 @@ public class Wheels
 		this.description = description;
 	}
 
-	public String getSize() 
+	public String getTyresize() 
 	{
-		return size;
+		return tyresize;
 	}
 
-	public void setSize(String size)
+	public void setTyresize(String tyresize)
 	{
-		this.size = size;
+		this.tyresize = tyresize;
 	}
 
-	public Integer getPressure() 
+	public Integer getRimSize() 
 	{
-		return pressure;
+		return rimSize;
 	}
 
-	public void setPressure(Integer pressure) 
+	public void setRimSize(Integer rimSize) 
 	{
-		this.pressure = pressure;
+		this.rimSize = rimSize;
 	}
-	
-		
+
 		
 }

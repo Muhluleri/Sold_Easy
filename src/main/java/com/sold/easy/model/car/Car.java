@@ -5,20 +5,23 @@ import com.sold.easy.model.car.history.History;
 import com.sold.easy.model.car.make.Make;
 import com.sold.easy.model.car.owner.Owner;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Car 
 {
+	@Id
+	@SequenceGenerator(name =" car_id" , sequenceName = "car_id_gen")
+	@GeneratedValue(generator = "car_id_gen")
+	private long id;
+	//Checked
 	private Owner owner;
+	//Checked
 	private Make make;
+	//Checked
 	private Extras extras;
+	//Checked
 	private History history;
-	
-	public Car(Owner owner, Make make, Extras extras, History history) 
-	{
-		this.owner = owner;
-		this.make = make;
-		this.extras = extras;
-		this.history = history;
-	}
 
 	public Owner getOwner() {
 		return owner;

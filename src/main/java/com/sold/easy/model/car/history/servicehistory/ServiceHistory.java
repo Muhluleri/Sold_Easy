@@ -1,14 +1,36 @@
 package com.sold.easy.model.car.history.servicehistory;
 
+import java.util.List;
+import jakarta.persistence.*;
+
+@Entity
 public class ServiceHistory 
 {
+	@Id
+	@SequenceGenerator(name = "serviceHistory_id", sequenceName = "serviceHistory_id_gen")
+	@GeneratedValue ( generator = "serviceHistory_id_gen")
+	private long id;
 	private String servicePlan;
-	private String serviceHistory;
+	private List<Service> services;
 	
-	public ServiceHistory(String servicePlan, String serviceHistory) 
+	public long getId() 
 	{
-		this.servicePlan = servicePlan;
-		this.serviceHistory = serviceHistory;
+		return id;
+	}
+
+	public void setId(long id) 
+	{
+		this.id = id;
+	}
+	
+	public List<Service> getServices() 
+	{
+		return services;
+	}
+
+	public void setServices(List<Service> services) 
+	{
+		this.services = services;
 	}
 
 	public String getServicePlan() 
@@ -21,13 +43,4 @@ public class ServiceHistory
 		this.servicePlan = servicePlan;
 	}
 
-	public String getServiceHistory() 
-	{
-		return serviceHistory;
-	}
-
-	public void setServiceHistory(String serviceHistory) 
-	{
-		this.serviceHistory = serviceHistory;
-	}	
 }

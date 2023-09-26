@@ -1,20 +1,21 @@
 package com.sold.easy.service.register;
 
-import com.sold.easy.model.car.Profile;
+import com.sold.easy.dto.profile.ProfileDTO;
 
 public class FormatChecker 
 {
-	private Profile profile;
+	@SuppressWarnings("unused")
+	private ProfileDTO profile;
 
-	public FormatChecker(Profile profile) 
+	public FormatChecker(ProfileDTO profile) 
 	{
 		this.profile = profile;
 		
-		checkName(profile.getClient().getFirstName());
-		checkName(profile.getClient().getLastName());
+		checkName(profile.getClient().getName());
+		checkName(profile.getClient().getSurname());
 		checkIdNo(profile.getClient().getIdNumber());
-		checkEmail(profile.getClient().getEmailAddress());
-		checkPhoneNo(profile.getClient().getCellPhoneNo());
+		checkEmail(profile.getClient().getEmail());
+		checkPhoneNo(profile.getClient().getTelephoneno());
 	}
 
 	private void checkPhoneNo(String cellPhoneNo) 
@@ -25,15 +26,25 @@ public class FormatChecker
 			boolean flag = Character.isSpaceChar(cellPhoneNo.charAt(i));
 			if (flag)
 			{
-				throw new
+				throw new InvalidFormatException();
 			}
+		}
+		
+		if (cellPhoneNo.charAt(0)== '0')
+		{
+			throw new InvalidFormatException("Please indentify the country code of the cellphone number e.g. +27");
+		}
+		
+		if (tmp.length() != 12)
+		{
+			throw new InvalidFormatException("There is an invalid amount of digits in the cellphone number");
 		}
 		
 	}
 
 	private void checkEmail(String emailAddress) 
 	{
-		
+
 	}
 
 	private void checkIdNo(String idNumber) 

@@ -1,18 +1,30 @@
 package com.sold.easy.model.car.make.details;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
+
+@Entity
 public class Details 
 {
+	@Id
+	@SequenceGenerator( name = "detail_id" , sequenceName = "detail_id_gen")
+	@GeneratedValue (generator = "detail_id_gen")
+	private long id;
 	private String make;
 	private Integer year;
 	private String model;
 	private String chasisNumber;
 	
-	public Details(String make, Integer year, String model, String chasisNumber) 
+	public long getId() 
 	{
-		this.make = make;
-		this.year = year;
-		this.model = model;
-		this.chasisNumber = chasisNumber;
+		return id;
+	}
+
+	public void setId(long id) 
+	{
+		this.id = id;
 	}
 
 	public String getMake() 

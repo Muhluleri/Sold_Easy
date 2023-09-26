@@ -4,27 +4,43 @@ import com.sold.easy.model.car.make.colour.Colour;
 import com.sold.easy.model.car.make.engine.Engine;
 import com.sold.easy.model.car.make.fuel.Fuel;
 import com.sold.easy.model.car.make.wheels.Wheels;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
+
 import com.sold.easy.model.car.make.details.Details;
 import com.sold.easy.model.car.make.transmission.Transmission;
 
+@Entity
 public class Make 
 {
+	@Id
+	@SequenceGenerator(name = "make_id" , sequenceName = "make_id_gen")
+	@GeneratedValue( generator = "make_id_gen")
+	private long id;
+	//Checked
 	private Details details;
+	//Checked
 	private Engine engine;
+	//Checked
 	private Transmission transmission;
+	//Checked
 	private Fuel fuel;
+	//Checked
 	private Wheels wheels;
+	//Checked
 	private Colour colour;
-	
-	public Make(Details details, Engine engine, Transmission transmission, 
-				Fuel fuel, Wheels wheels, Colour colour) 
+
+	public long getId() 
 	{
-		this.details = details;
-		this.engine = engine;
-		this.transmission = transmission;
-		this.fuel = fuel;
-		this.wheels = wheels;
-		this.colour = colour;
+		return id;
+	}
+
+	public void setId(long id) 
+	{
+		this.id = id;
 	}
 
 	public Details getDetails() 
