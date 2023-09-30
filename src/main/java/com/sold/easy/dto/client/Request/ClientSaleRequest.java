@@ -1,5 +1,6 @@
-package com.sold.easy.dto.client;
+package com.sold.easy.dto.client.Request;
 
+import com.sold.easy.dto.client.Car;
 import com.sold.easy.dto.sale.SaleDTO;
 
 import lombok.Getter;

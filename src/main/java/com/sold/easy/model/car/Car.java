@@ -1,5 +1,7 @@
 package com.sold.easy.model.car;
 
+import java.util.List;
+
 import com.sold.easy.model.car.extras.Extras;
 import com.sold.easy.model.car.history.History;
 import com.sold.easy.model.car.make.Make;
@@ -19,7 +21,7 @@ public class Car
 	//Checked
 	private Make make;
 	//Checked
-	private Extras extras;
+	private List<Extras> extras;
 	//Checked
 	private History history;
 
@@ -41,12 +43,12 @@ public class Car
 		this.make = make;
 	}
 
-	public Extras getExtras() 
+	public List<Extras> getExtras() 
 	{
 		return extras;
 	}
 
-	public void setExtras(Extras extras) 
+	public void setExtras(List<Extras> extras) 
 	{
 		this.extras = extras;
 	}

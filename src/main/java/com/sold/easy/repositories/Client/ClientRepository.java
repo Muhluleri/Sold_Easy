@@ -1,4 +1,4 @@
-package com.sold.easy.repositories;
+package com.sold.easy.repositories.Client;
 
 import com.sold.easy.model.car.Client;
 import org.springframework.data.jpa.repository.JpaRepository;

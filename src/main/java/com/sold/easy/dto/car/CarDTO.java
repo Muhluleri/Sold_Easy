@@ -2,6 +2,8 @@ package com.sold.easy.dto.car;
 
 import java.util.List;
 
+import com.sold.easy.dto.car.History.HistoryDTO;
+
 public class CarDTO 
 {
 	//Build CarDTO

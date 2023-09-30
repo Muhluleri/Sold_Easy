@@ -1,4 +1,6 @@
-package com.sold.easy.dto.profile;
+package com.sold.easy.dto.profile.Request;
+
+import com.sold.easy.dto.profile.ProfileDTO;
 
 public class ProfileRegisterRequest 
 {

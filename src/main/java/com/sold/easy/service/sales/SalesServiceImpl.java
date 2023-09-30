@@ -1,8 +1,8 @@
 
 package com.sold.easy.service.sales;
 
-import com.sold.easy.dto.client.ClientSaleRequest;
-import com.sold.easy.dto.client.ClientSaleResponse;
+import com.sold.easy.dto.client.Request.ClientSaleRequest;
+import com.sold.easy.dto.client.Response.ClientSaleResponse;
 import com.sold.easy.mapping.ProfileMapper;
 import com.sold.easy.model.car.Client;
 import com.sold.easy.model.car.Profile;
@@ -10,8 +10,9 @@ import com.sold.easy.model.car.Sale;
 import com.sold.easy.service.sales.exception.ValidationException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import com.sold.easy.repositories.*;
-
+import com.sold.easy.repositories.Client.ClientRepository;
+import com.sold.easy.repositories.Profile.ProfileRepository;
+import com.sold.easy.repositories.Sale.SalesRepository;
 import java.util.List;
 import java.util.Optional;
 

@@ -1,9 +1,7 @@
-package com.sold.easy.repositories;
+package com.sold.easy.repositories.Profile;
 
 import com.sold.easy.model.car.Profile;
-
 import java.util.Optional;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

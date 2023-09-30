@@ -1,9 +1,9 @@
 package com.sold.easy.controller;
 
-import com.sold.easy.dto.client.ClientSaleRequest;
-import com.sold.easy.dto.client.ClientSaleResponse;
-import com.sold.easy.dto.profile.ProfileRegisterRequest;
-import com.sold.easy.dto.profile.ProfileRegisterResponse;
+import com.sold.easy.dto.client.Request.ClientSaleRequest;
+import com.sold.easy.dto.client.Response.ClientSaleResponse;
+import com.sold.easy.dto.profile.Request.ProfileRegisterRequest;
+import com.sold.easy.dto.profile.Response.ProfileRegisterResponse;
 import com.sold.easy.model.car.Sale;
 import com.sold.easy.service.register.ProfileRegister;
 import com.sold.easy.service.sales.SalesService;
@@ -21,7 +21,6 @@ public class CarController {
     private ProfileRegister profileRegister;
 
     //Register profile 
-    
     @PostMapping("/register")
     public ProfileRegisterResponse registerProfile(@RequestBody ProfileRegisterRequest profileRegisterRequest)
     {
@@ -35,13 +34,16 @@ public class CarController {
         return salesService.postCarSale(clientSaleRequest);
     }
     
-    //Administrator receives a list of all new sale requests before they are advertised
+    //Administrator receives a list of all new sale requests 
+    //before they are advertised
     @GetMapping("/sales/list/nonRegistered")
     public List<Sale> nonRegisteredSaleRequestList()
     {
     	return salesService.viewNotRegisteredSales();
     }
     
+    
+    //Show all registered cars for sale
     @GetMapping("/sales/list")
     public List<Sale> SaleRequestList()
     {

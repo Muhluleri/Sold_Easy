@@ -1,4 +1,4 @@
-package com.sold.easy.dto.client;
+package com.sold.easy.dto.client.Response;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,4 +1,4 @@
-package com.sold.easy.repositories;
+package com.sold.easy.repositories.Sale;
 
 import com.sold.easy.model.car.Sale;
 

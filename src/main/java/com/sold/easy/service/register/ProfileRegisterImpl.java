@@ -2,11 +2,11 @@ package com.sold.easy.service.register;
 
 import java.util.Optional;
 
-import com.sold.easy.dto.profile.ProfileRegisterRequest;
-import com.sold.easy.dto.profile.ProfileRegisterResponse;
+import com.sold.easy.dto.profile.Request.ProfileRegisterRequest;
+import com.sold.easy.dto.profile.Response.ProfileRegisterResponse;
 import com.sold.easy.mapping.ProfileMapper;
 import com.sold.easy.model.car.Profile;
-import com.sold.easy.repositories.ProfileRepository;
+import com.sold.easy.repositories.Profile.ProfileRepository;
 import com.sold.easy.service.register.exceptions.UserExistsException;
 
 public class ProfileRegisterImpl implements ProfileRegister
