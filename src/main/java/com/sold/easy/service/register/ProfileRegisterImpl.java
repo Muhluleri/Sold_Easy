@@ -18,7 +18,7 @@ public class ProfileRegisterImpl implements ProfileRegister
 	public ProfileRegisterResponse registerProfile(ProfileRegisterRequest profileRegisterRequest) 
 	{
 		Optional<Profile> profileName = profileRepository.findByName(profileRegisterRequest.getProfile().getClient().getName());
-		Optional<Profile> profileEmail = profileRepository.findbyEmail(profileRegisterRequest.getProfile().getClient().getEmail());
+		Optional<Profile> profileEmail = profileRepository.findByEmail(profileRegisterRequest.getProfile().getClient().getEmail());
 		//Identify whether the profile already exists
 		//If it exists inform user
 		if (profileName.isPresent() && profileEmail.isPresent())

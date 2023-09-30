@@ -5,10 +5,7 @@ import com.sold.easy.model.car.make.engine.Engine;
 import com.sold.easy.model.car.make.fuel.Fuel;
 import com.sold.easy.model.car.make.wheels.Wheels;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.*;
 
 import com.sold.easy.model.car.make.details.Details;
 import com.sold.easy.model.car.make.transmission.Transmission;
@@ -21,16 +18,22 @@ public class Make
 	@GeneratedValue( generator = "make_id_gen")
 	private long id;
 	//Checked
+	@OneToOne
 	private Details details;
 	//Checked
+	@OneToOne
 	private Engine engine;
 	//Checked
+	@OneToOne
 	private Transmission transmission;
 	//Checked
+	@OneToOne
 	private Fuel fuel;
 	//Checked
+	@OneToOne
 	private Wheels wheels;
 	//Checked
+	@OneToOne
 	private Colour colour;
 
 	public long getId() 

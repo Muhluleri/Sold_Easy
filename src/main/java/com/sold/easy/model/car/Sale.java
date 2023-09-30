@@ -1,9 +1,6 @@
 package com.sold.easy.model.car;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,60 +12,12 @@ public class Sale {
     @SequenceGenerator(name = "sale_id",sequenceName = "sale_id_gen")
     @GeneratedValue(generator = "sale_id_gen")
     private Long id;
+	@OneToOne
     private Client client;
+	@OneToOne
     private Profile profile;
+	@OneToOne
     private Car car;
     private Boolean registered;
-    
-	public Long getId() 
-	{
-		return id;
-	} 
-	
-	public void setId(Long id) 
-	{
-		this.id = id;
-	}
-	
-	public Client getClient() 
-	{
-		return client;
-	}
-	
-	public void setClient(Client client) 
-	{
-		this.client = client;
-	}
-	
-	public Profile getProfile()
-	{
-		return profile;
-	}
-	
-	public void setProfile(Profile profile)
-	{
-		this.profile = profile;
-	}
-	
-	public Car getCar() 
-	{
-		return car;
-	}
-	
-	public void setCar(Car car) 
-	{
-		this.car = car;
-	}
-	
-	public Boolean getRegistered() 
-	{
-		return registered;
-	}
-	
-	public void setRegistered(Boolean registered) 
-	{
-		this.registered = registered;
-	}
-    
-    
+
 }

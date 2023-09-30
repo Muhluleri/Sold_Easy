@@ -1,9 +1,15 @@
 package com.sold.easy.model.car.make.transmission;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
+import lombok.Getter;
+import lombok.Setter;
 
+@Entity
+@Getter
+@Setter
 public class Transmission 
 {
 	@Id
@@ -12,37 +18,5 @@ public class Transmission
 	private TranmsionType type;
 	private String noOfGears;
 	private String driveWheels;
-
-	public String getDriveWheels() 
-	{
-		return driveWheels;
-	}
-
-	public void setDriveWheels(String driveWheels) 
-	{
-		this.driveWheels = driveWheels;
-	}
-
-	public TranmsionType getType() 
-	{
-		return type;
-	}
-
-	public void setType(TranmsionType type) 
-	{
-		this.type = type;
-	}
-
-	public String getNoOfGears() 
-	{
-		return noOfGears;
-	}
-
-	public void setNoOfGears(String noOfGears) 
-	{
-		this.noOfGears = noOfGears;
-	}
-	
-	
 	
 }

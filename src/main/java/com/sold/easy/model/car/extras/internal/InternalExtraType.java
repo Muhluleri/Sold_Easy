@@ -1,8 +1,12 @@
 package com.sold.easy.model.car.extras.internal;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 public class InternalExtraType
 {
 	@Id
@@ -10,24 +14,4 @@ public class InternalExtraType
 	@GeneratedValue( generator = "internalExtraType_id_gen")
 	private long id;
 	private String name;
-	
-	public long getId() 
-	{
-		return id;
-	}
-	
-	public void setId(long id) 
-	{
-		this.id = id;
-	}
-	
-	public String getName() 
-	{
-		return name;
-	}
-	
-	public void setName(String name) 
-	{
-		this.name = name;
-	}
 }

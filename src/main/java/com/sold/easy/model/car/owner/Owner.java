@@ -1,7 +1,21 @@
 package com.sold.easy.model.car.owner;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
 public class Owner 
 {
+	@Id
+	@SequenceGenerator(name = "owner_id" , sequenceName = "owner_id_gen")
+	@GeneratedValue( generator = "owner_id_gen")
+	private long id;
 	private String name;
 	private String surname;
 	private String email;
@@ -9,67 +23,4 @@ public class Owner
 	private String altNo;
 	private String idNumber;
 
-	public String getIdNumber() 
-	{
-		return idNumber;
-	}
-
-	public void setIdNumber(String idNumber) 
-	{
-		this.idNumber = idNumber;
-	}
-
-	public String getName() 
-	{
-		return name;
-	}
-
-	public void setName(String name) 
-	{
-		this.name = name;
-	}
-
-	public String getSurname()
-	{
-		return surname;
-	}
-
-	public void setSurname(String surname) 
-	{
-		this.surname = surname;
-	}
-
-	public String getEmail() 
-	{
-		return email;
-	}
-
-	public void setEmail(String email) 
-	{
-		this.email = email;
-	}
-
-	public String getCellNo()
-	{
-		return cellNo;
-	}
-
-	public void setCellNo(String cellNo) 
-	{
-		this.cellNo = cellNo;
-	}
-
-	public String getAltNo() 
-	{
-		return altNo;
-	}
-
-	public void setAltNo(String altNo) 
-	{
-		this.altNo = altNo;
-	}
-	
-	
-	
-	
 } 

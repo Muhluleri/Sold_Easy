@@ -2,10 +2,16 @@ package com.sold.easy.model.car.history.licensehistory;
 
 import java.util.Date;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
+import lombok.Getter;
+import lombok.Setter;
 
+@Entity
+@Getter
+@Setter
 public class LicenseHistory 
 {
 	@Id
@@ -15,44 +21,4 @@ public class LicenseHistory
 	private boolean validLicense;
 	private Date dateOfExpiry;
 	private String vehicleRegister;
-
-	public long getId() 
-	{
-		return id;
-	}
-
-	public void setId(long id) 
-	{
-		this.id = id;
-	}
-	
-	public boolean isValidLicense() 
-	{
-		return validLicense;
-	}
-
-	public void setValidLicense(boolean validLicense) 
-	{
-		this.validLicense = validLicense;
-	}
-
-	public Date getDateOfExpiry() 
-	{
-		return dateOfExpiry;
-	}
-
-	public void setDateOfExpiry(Date dateOfExpiry)
-	{
-		this.dateOfExpiry = dateOfExpiry;
-	}
-
-	public String getVehicleRegister() 
-	{
-		return vehicleRegister;
-	}
-
-	public void setVehicleRegister(String vehicleRegister)
-	{
-		this.vehicleRegister = vehicleRegister;
-	}	
 }

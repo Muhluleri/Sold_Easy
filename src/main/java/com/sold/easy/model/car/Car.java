@@ -8,8 +8,12 @@ import com.sold.easy.model.car.make.Make;
 import com.sold.easy.model.car.owner.Owner;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 public class Car 
 {
 	@Id
@@ -17,56 +21,17 @@ public class Car
 	@GeneratedValue(generator = "car_id_gen")
 	private long id;
 	//Checked
+
+	@OneToOne
 	private Owner owner;
 	//Checked
+	@OneToOne
 	private Make make;
 	//Checked
+	@OneToMany
 	private List<Extras> extras;
 	//Checked
+	@OneToOne
 	private History history;
-
-	public Owner getOwner() {
-		return owner;
-	}
-
-	public void setOwner(Owner owner) {
-		this.owner = owner;
-	}
-
-	public Make getMake() 
-	{
-		return make;
-	}
-
-	public void setMake(Make make)
-	{
-		this.make = make;
-	}
-
-	public List<Extras> getExtras() 
-	{
-		return extras;
-	}
-
-	public void setExtras(List<Extras> extras) 
-	{
-		this.extras = extras;
-	}
-
-	public History getHistory() 
-	{
-		return history;
-	}
-
-	public void setHistory(History history) 
-	{
-		this.history = history;
-	}
-	
-	
-	
-	
-	
-	
 	
 }

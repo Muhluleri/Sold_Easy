@@ -1,18 +1,18 @@
 package com.sold.easy.model.car.extras.internal;
 
-public class InternalExtra 
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
+public class InternalExtra
 {
+	@Id
+	@SequenceGenerator(name = "internal_extra_id" , sequenceName = "internal_extra_gen")
+	@GeneratedValue( generator = "internal_extra_gen")
+	private long id;
+	@OneToOne
 	private InternalExtraType internalExtraType;
-
-	public InternalExtraType getInternalExtraType() 
-	{
-		return internalExtraType;
-	}
-
-	public void setInternalExtraType(InternalExtraType internalExtraType) 
-	{
-		this.internalExtraType = internalExtraType;
-	}
-	
-		
 }

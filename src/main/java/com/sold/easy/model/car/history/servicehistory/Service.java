@@ -3,8 +3,12 @@ package com.sold.easy.model.car.history.servicehistory;
 import java.util.Date;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 public class Service 
 {
 	@Id

@@ -7,68 +7,33 @@ import com.sold.easy.model.car.history.financehistory.FinanceHistory;
 import com.sold.easy.model.car.history.licensehistory.LicenseHistory;
 import com.sold.easy.model.car.history.ownershiphistory.OwnershipHistory;
 import com.sold.easy.model.car.history.servicehistory.ServiceHistory;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+@Entity
+@Getter
+@Setter
 public class History 
 {
 	//Checked
+	@Id
+	@SequenceGenerator(name = "History_id" , sequenceName = "History_id_gen")
+	@GeneratedValue( generator = "History_id_gen")
+	private long id;
+	@OneToMany
 	private List<OwnershipHistory> ownershipHistory;
 	//Checked
+	@OneToOne
 	private ConditionHistory conditionHistory;
 	//Checked
+	@OneToOne
 	private FinanceHistory financeHistory;
 	//Checked
+	@OneToOne
 	private ServiceHistory serviceHistory;
 	//Checked
+	@OneToOne
 	private LicenseHistory licenseHistory;
-	
 
-	public List<OwnershipHistory> getOwnershipHistory() 
-	{
-		return ownershipHistory;
-	}
-
-	public void setOwnershipHistory(List<OwnershipHistory> ownershipHistory) 
-	{
-		this.ownershipHistory = ownershipHistory;
-	}
-
-	public ConditionHistory getConditionHistory() 
-	{
-		return conditionHistory;
-	}
-
-	public void setConditionHistory(ConditionHistory conditionHistory) 
-	{
-		this.conditionHistory = conditionHistory;
-	}
-
-	public FinanceHistory getFinanceHistory() 
-	{
-		return financeHistory;
-	}
-
-	public void setFinanceHistory(FinanceHistory financeHistory) 
-	{
-		this.financeHistory = financeHistory;
-	}
-
-	public ServiceHistory getServiceHistory() 
-	{
-		return serviceHistory;
-	}
-
-	public void setServiceHistory(ServiceHistory serviceHistory) 
-	{
-		this.serviceHistory = serviceHistory;
-	}
-
-	public LicenseHistory getLicenseHistory() 
-	{
-		return licenseHistory;
-	}
-
-	public void setLicenseHistory(LicenseHistory licenseHistory) 
-	{
-		this.licenseHistory = licenseHistory;
-	}	
 }

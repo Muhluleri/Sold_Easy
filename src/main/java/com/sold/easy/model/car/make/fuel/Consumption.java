@@ -1,8 +1,12 @@
 package com.sold.easy.model.car.make.fuel;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 public class Consumption 
 {
 	@Id
@@ -10,36 +14,7 @@ public class Consumption
 	@GeneratedValue( generator = "consumption_id_gen")
 	private long id;
 	private double rate;
+	@Enumerated(EnumType.STRING)
 	private ConsumptionType unit;
-	
-	public long getId() 
-	{
-		return id;
-	}
 
-	public void setId(long id) 
-	{
-		this.id = id;
-	}
-
-	public double getRate() 
-	{
-		return rate;
-	}
-	
-	public void setRate(double rate) 
-	{
-		this.rate = rate;
-	}
-	
-	public ConsumptionType getUnit() 
-	{
-		return unit;
-	}
-	
-	public void setUnit(ConsumptionType unit)
-	{
-		this.unit = unit;
-	}
-	
 }
